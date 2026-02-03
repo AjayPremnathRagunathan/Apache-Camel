@@ -1,0 +1,16 @@
+API_CALL_STARTED => Calling Private API
+API_RESPONSE_RECEIVED => {"status":"Good","message":"Private API is running"}
+MESSAGE_READY_FOR_KAFKA => Payload prepared successfully
+ERROR_OCCURRED => Kafka broker is DOWN or unreachable
+API_CALL_STARTED => Calling Private API
+API_RESPONSE_RECEIVED => {"status":"Good","message":"Private API is running"}
+MESSAGE_READY_FOR_KAFKA => Payload prepared successfully
+ERROR_OCCURRED => Kafka broker is DOWN or unreachable
+API_CALL_STARTED => Calling Private API
+API_RESPONSE_RECEIVED => {"status":"Good","message":"Private API is running"}
+MESSAGE_READY_FOR_KAFKA => Payload prepared successfully
+ERROR_OCCURRED => Kafka broker is DOWN or unreachable
+API_CALL_STARTED => Calling Private API
+API_RESPONSE_RECEIVED => {"status":"Good","message":"Private API is running"}
+MESSAGE_READY_FOR_KAFKA => Payload prepared successfully
+ERROR_OCCURRED => Kafka broker is DOWN or unreachable

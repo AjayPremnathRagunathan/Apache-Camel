@@ -1,0 +1,16 @@
+[2026-02-03 08:59:42.858] API_CALL_STARTED => Calling Private API
+[2026-02-03 08:59:42.858] API_RESPONSE_RECEIVED => {"message":"Camel Kafka using Private API connectivity is working"}
+[2026-02-03 08:59:42.858] MESSAGE_READY_FOR_KAFKA => Payload prepared successfully
+[2026-02-03 08:59:42.858] MESSAGE_SENT_TO_KAFKA => {"message":"Camel Kafka using Private API connectivity is working"}
+[2026-02-03 08:59:47.848] API_CALL_STARTED => Calling Private API
+[2026-02-03 08:59:47.848] API_RESPONSE_RECEIVED => {"message":"Camel Kafka using Private API connectivity is working"}
+[2026-02-03 08:59:47.848] MESSAGE_READY_FOR_KAFKA => Payload prepared successfully
+[2026-02-03 08:59:47.848] MESSAGE_SENT_TO_KAFKA => {"message":"Camel Kafka using Private API connectivity is working"}
+[2026-02-03 08:59:52.858] API_CALL_STARTED => Calling Private API
+[2026-02-03 08:59:52.858] API_RESPONSE_RECEIVED => {"message":"Camel Kafka using Private API connectivity is working"}
+[2026-02-03 08:59:52.858] MESSAGE_READY_FOR_KAFKA => Payload prepared successfully
+[2026-02-03 08:59:52.858] MESSAGE_SENT_TO_KAFKA => {"message":"Camel Kafka using Private API connectivity is working"}
+[2026-02-03 08:59:57.862] API_CALL_STARTED => Calling Private API
+[2026-02-03 08:59:57.862] API_RESPONSE_RECEIVED => {"message":"Camel Kafka using Private API connectivity is working"}
+[2026-02-03 08:59:57.862] MESSAGE_READY_FOR_KAFKA => Payload prepared successfully
+[2026-02-03 08:59:57.862] MESSAGE_SENT_TO_KAFKA => {"message":"Camel Kafka using Private API connectivity is working"}

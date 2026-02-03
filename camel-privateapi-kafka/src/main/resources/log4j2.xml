@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+
+    <!-- ================== PROPERTIES ================== -->
+    <Properties>
+        <Property name="LOG_DIR">logs</Property>
+        <Property name="BUSINESS_LOG_FILE">camel-business.log</Property>
+    </Properties>
+
+    <!-- ================== APPENDERS ================== -->
+    <Appenders>
+
+        <!-- Console Appender (used for all logs) -->
+        <Console name="Console" target="SYSTEM_OUT">
+            <!-- MESSAGE ONLY -->
+            <PatternLayout pattern="%msg%n"/>
+        </Console>
+
+        <!-- File Appender (ONLY business logs) -->
+        <RollingFile name="BusinessFile"
+                     fileName="${LOG_DIR}/${BUSINESS_LOG_FILE}"
+                     filePattern="${LOG_DIR}/camel-business-%d{yyyy-MM-dd}.log">
+            <!-- MESSAGE ONLY -->
+            <PatternLayout pattern="%msg%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1"/>
+            </Policies>
+        </RollingFile>
+
+    </Appenders>
+
+    <!-- ================== LOGGERS ================== -->
+    <Loggers>
+
+        <!-- 🔥 BUSINESS LOGGER -->
+        <!-- SAME OUTPUT goes to CONSOLE + FILE -->
+        <Logger name="BUSINESS_LOG" level="INFO" additivity="false">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="BusinessFile"/>
+        </Logger>
+
+        <!-- Apache Camel logs → console only (optional but clean) -->
+        <Logger name="org.apache.camel" level="INFO" additivity="false">
+            <AppenderRef ref="Console"/>
+        </Logger>
+
+        <!-- Spring / everything else → console only -->
+        <Root level="INFO">
+            <AppenderRef ref="Console"/>
+        </Root>
+
+    </Loggers>
+
+</Configuration>

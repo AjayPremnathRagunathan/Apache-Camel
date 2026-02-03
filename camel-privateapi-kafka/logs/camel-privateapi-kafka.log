@@ -1,0 +1,329 @@
+2026-01-29 13:39:54 INFO  [main] com.example.camel.CamelKafkaApplication - Starting CamelKafkaApplication using Java 11.0.29 on VDIDEV-018 with PID 10624 (C:\Users\ARagunathan\Documents\camel-privateapi-kafka\target\classes started by ARagunathan in C:\Users\ARagunathan\Documents\camel-privateapi-kafka)
+2026-01-29 13:39:54 INFO  [main] com.example.camel.CamelKafkaApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-29 13:39:59 INFO  [main] org.apache.camel.impl.engine.AbstractCamelContext - Apache Camel 3.20.7 (camel-1) is starting
+2026-01-29 13:39:59 INFO  [main] org.apache.camel.spring.boot.CamelSpringBootApplicationListener - Starting CamelMainRunController to ensure the main thread keeps running
+2026-01-29 13:39:59 INFO  [CamelMainRunController] org.apache.camel.main.MainSupport - Apache Camel (Main) 3.20.7 is starting
+2026-01-29 13:39:59 INFO  [main] org.apache.camel.impl.engine.AbstractCamelContext - Routes startup (started:1)
+2026-01-29 13:39:59 INFO  [main] org.apache.camel.impl.engine.AbstractCamelContext -     Started private-api-to-kafka-route (timer://privateApiPoller)
+2026-01-29 13:39:59 INFO  [main] org.apache.camel.impl.engine.AbstractCamelContext - Apache Camel 3.20.7 (camel-1) started in 1s20ms (build:174ms init:624ms start:222ms)
+2026-01-29 13:39:59 INFO  [main] com.example.camel.CamelKafkaApplication - Started CamelKafkaApplication in 6.686 seconds (JVM running for 9.567)
+2026-01-29 13:40:00 INFO  [Camel (camel-1) thread #1 - timer://privateApiPoller] private-api-to-kafka-route - ? Triggering Private API call
+2026-01-29 13:40:04 ERROR [Camel (camel-1) thread #1 - timer://privateApiPoller] com.example.camel.routes.PrivateApiToKafkaRoute - ? Error occurred while calling Private API
+org.apache.http.conn.HttpHostConnectException: Connect to 172.24.31.54:8081 [/172.24.31.54] failed: Connection refused: connect
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156) ~[httpclient-4.5.14.jar:4.5.14]
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376) ~[httpclient-4.5.14.jar:4.5.14]
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393) ~[httpclient-4.5.14.jar:4.5.14]
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236) ~[httpclient-4.5.14.jar:4.5.14]
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186) ~[httpclient-4.5.14.jar:4.5.14]
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89) ~[httpclient-4.5.14.jar:4.5.14]
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185) ~[httpclient-4.5.14.jar:4.5.14]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:72) ~[httpclient-4.5.14.jar:4.5.14]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56) ~[httpclient-4.5.14.jar:4.5.14]
+	at org.apache.camel.component.http.HttpProducer.executeMethod(HttpProducer.java:445) ~[camel-http-3.20.7.jar:3.20.7]
+	at org.apache.camel.component.http.HttpProducer.process(HttpProducer.java:273) ~[camel-http-3.20.7.jar:3.20.7]
+	at org.apache.camel.support.AsyncProcessorConverterHelper$ProcessorToAsyncProcessorBridge.process(AsyncProcessorConverterHelper.java:66) ~[camel-support-3.20.7.jar:3.20.7]
+	at org.apache.camel.processor.SendDynamicProcessor.lambda$process$0(SendDynamicProcessor.java:197) ~[camel-core-processor-3.20.7.jar:3.20.7]
+	at org.apache.camel.support.cache.DefaultProducerCache.doInAsyncProducer(DefaultProducerCache.java:327) ~[camel-support-3.20.7.jar:3.20.7]
+	at org.apache.camel.processor.SendDynamicProcessor.process(SendDynamicProcessor.java:182) ~[camel-core-processor-3.20.7.jar:3.20.7]
+	at org.apache.camel.processor.errorhandler.RedeliveryErrorHandler$RedeliveryTask.doRun(RedeliveryErrorHandler.java:829) ~[camel-core-processor-3.20.7.jar:3.20.7]
+	at org.apache.camel.processor.errorhandler.RedeliveryErrorHandler$RedeliveryTask.run(RedeliveryErrorHandler.java:737) ~[camel-core-processor-3.20.7.jar:3.20.7]
+	at org.apache.camel.impl.engine.DefaultReactiveExecutor$Worker.schedule(DefaultReactiveExecutor.java:181) ~[camel-base-engine-3.20.7.jar:3.20.7]
+	at org.apache.camel.impl.engine.DefaultReactiveExecutor.scheduleMain(DefaultReactiveExecutor.java:59) ~[camel-base-engine-3.20.7.jar:3.20.7]
+	at org.apache.camel.processor.Pipeline.process(Pipeline.java:165) ~[camel-core-processor-3.20.7.jar:3.20.7]
+	at org.apache.camel.impl.engine.CamelInternalProcessor.process(CamelInternalProcessor.java:392) ~[camel-base-engine-3.20.7.jar:3.20.7]
+	at org.apache.camel.component.timer.TimerConsumer.sendTimerExchange(TimerConsumer.java:210) ~[camel-timer-3.20.7.jar:3.20.7]
+	at org.apache.camel.component.timer.TimerConsumer$1.run(TimerConsumer.java:76) ~[camel-timer-3.20.7.jar:3.20.7]
+	at java.util.TimerThread.mainLoop(Timer.java:563) ~[?:?]
+	at java.util.TimerThread.run(Timer.java:513) ~[?:?]
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.PlainSocketImpl.connect0(Native Method) ~[?:?]
+	at java.net.PlainSocketImpl.socketConnect(PlainSocketImpl.java:101) ~[?:?]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:412) ~[?:?]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:255) ~[?:?]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:237) ~[?:?]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[?:?]
+	at java.net.Socket.connect(Socket.java:609) ~[?:?]
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75) ~[httpclient-4.5.14.jar:4.5.14]
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142) ~[httpclient-4.5.14.jar:4.5.14]
+	... 24 more
+2026-01-29 13:40:05 INFO  [Camel (camel-1) thread #1 - timer://privateApiPoller] private-api-to-kafka-route - ? Triggering Private API call
+2026-01-29 13:40:07 ERROR [Camel (camel-1) thread #1 - timer://privateApiPoller] com.example.camel.routes.PrivateApiToKafkaRoute - ? Error occurred while calling Private API
+org.apache.http.conn.HttpHostConnectException: Connect to 172.24.31.54:8081 [/172.24.31.54] failed: Connection refused: connect
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156) ~[httpclient-4.5.14.jar:4.5.14]
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376) ~[httpclient-4.5.14.jar:4.5.14]
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393) ~[httpclient-4.5.14.jar:4.5.14]
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236) ~[httpclient-4.5.14.jar:4.5.14]
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186) ~[httpclient-4.5.14.jar:4.5.14]
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89) ~[httpclient-4.5.14.jar:4.5.14]
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185) ~[httpclient-4.5.14.jar:4.5.14]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:72) ~[httpclient-4.5.14.jar:4.5.14]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56) ~[httpclient-4.5.14.jar:4.5.14]
+	at org.apache.camel.component.http.HttpProducer.executeMethod(HttpProducer.java:445) ~[camel-http-3.20.7.jar:3.20.7]
+	at org.apache.camel.component.http.HttpProducer.process(HttpProducer.java:273) ~[camel-http-3.20.7.jar:3.20.7]
+	at org.apache.camel.support.AsyncProcessorConverterHelper$ProcessorToAsyncProcessorBridge.process(AsyncProcessorConverterHelper.java:66) ~[camel-support-3.20.7.jar:3.20.7]
+	at org.apache.camel.processor.SendDynamicProcessor.lambda$process$0(SendDynamicProcessor.java:197) ~[camel-core-processor-3.20.7.jar:3.20.7]
+	at org.apache.camel.support.cache.DefaultProducerCache.doInAsyncProducer(DefaultProducerCache.java:327) ~[camel-support-3.20.7.jar:3.20.7]
+	at org.apache.camel.processor.SendDynamicProcessor.process(SendDynamicProcessor.java:182) ~[camel-core-processor-3.20.7.jar:3.20.7]
+	at org.apache.camel.processor.errorhandler.RedeliveryErrorHandler$RedeliveryTask.doRun(RedeliveryErrorHandler.java:829) ~[camel-core-processor-3.20.7.jar:3.20.7]
+	at org.apache.camel.processor.errorhandler.RedeliveryErrorHandler$RedeliveryTask.run(RedeliveryErrorHandler.java:737) ~[camel-core-processor-3.20.7.jar:3.20.7]
+	at org.apache.camel.impl.engine.DefaultReactiveExecutor$Worker.schedule(DefaultReactiveExecutor.java:181) ~[camel-base-engine-3.20.7.jar:3.20.7]
+	at org.apache.camel.impl.engine.DefaultReactiveExecutor.scheduleMain(DefaultReactiveExecutor.java:59) ~[camel-base-engine-3.20.7.jar:3.20.7]
+	at org.apache.camel.processor.Pipeline.process(Pipeline.java:165) ~[camel-core-processor-3.20.7.jar:3.20.7]
+	at org.apache.camel.impl.engine.CamelInternalProcessor.process(CamelInternalProcessor.java:392) ~[camel-base-engine-3.20.7.jar:3.20.7]
+	at org.apache.camel.component.timer.TimerConsumer.sendTimerExchange(TimerConsumer.java:210) ~[camel-timer-3.20.7.jar:3.20.7]
+	at org.apache.camel.component.timer.TimerConsumer$1.run(TimerConsumer.java:76) ~[camel-timer-3.20.7.jar:3.20.7]
+	at java.util.TimerThread.mainLoop(Timer.java:563) ~[?:?]
+	at java.util.TimerThread.run(Timer.java:513) ~[?:?]
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.PlainSocketImpl.connect0(Native Method) ~[?:?]
+	at java.net.PlainSocketImpl.socketConnect(PlainSocketImpl.java:101) ~[?:?]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:412) ~[?:?]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:255) ~[?:?]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:237) ~[?:?]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[?:?]
+	at java.net.Socket.connect(Socket.java:609) ~[?:?]
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75) ~[httpclient-4.5.14.jar:4.5.14]
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142) ~[httpclient-4.5.14.jar:4.5.14]
+	... 24 more
+2026-01-29 13:40:10 INFO  [Camel (camel-1) thread #1 - timer://privateApiPoller] private-api-to-kafka-route - ? Triggering Private API call
+2026-01-29 13:40:12 ERROR [Camel (camel-1) thread #1 - timer://privateApiPoller] com.example.camel.routes.PrivateApiToKafkaRoute - ? Error occurred while calling Private API
+org.apache.http.conn.HttpHostConnectException: Connect to 172.24.31.54:8081 [/172.24.31.54] failed: Connection refused: connect
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156) ~[httpclient-4.5.14.jar:4.5.14]
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376) ~[httpclient-4.5.14.jar:4.5.14]
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393) ~[httpclient-4.5.14.jar:4.5.14]
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236) ~[httpclient-4.5.14.jar:4.5.14]
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186) ~[httpclient-4.5.14.jar:4.5.14]
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89) ~[httpclient-4.5.14.jar:4.5.14]
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185) ~[httpclient-4.5.14.jar:4.5.14]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:72) ~[httpclient-4.5.14.jar:4.5.14]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56) ~[httpclient-4.5.14.jar:4.5.14]
+	at org.apache.camel.component.http.HttpProducer.executeMethod(HttpProducer.java:445) ~[camel-http-3.20.7.jar:3.20.7]
+	at org.apache.camel.component.http.HttpProducer.process(HttpProducer.java:273) ~[camel-http-3.20.7.jar:3.20.7]
+	at org.apache.camel.support.AsyncProcessorConverterHelper$ProcessorToAsyncProcessorBridge.process(AsyncProcessorConverterHelper.java:66) ~[camel-support-3.20.7.jar:3.20.7]
+	at org.apache.camel.processor.SendDynamicProcessor.lambda$process$0(SendDynamicProcessor.java:197) ~[camel-core-processor-3.20.7.jar:3.20.7]
+	at org.apache.camel.support.cache.DefaultProducerCache.doInAsyncProducer(DefaultProducerCache.java:327) ~[camel-support-3.20.7.jar:3.20.7]
+	at org.apache.camel.processor.SendDynamicProcessor.process(SendDynamicProcessor.java:182) ~[camel-core-processor-3.20.7.jar:3.20.7]
+	at org.apache.camel.processor.errorhandler.RedeliveryErrorHandler$RedeliveryTask.doRun(RedeliveryErrorHandler.java:829) ~[camel-core-processor-3.20.7.jar:3.20.7]
+	at org.apache.camel.processor.errorhandler.RedeliveryErrorHandler$RedeliveryTask.run(RedeliveryErrorHandler.java:737) ~[camel-core-processor-3.20.7.jar:3.20.7]
+	at org.apache.camel.impl.engine.DefaultReactiveExecutor$Worker.schedule(DefaultReactiveExecutor.java:181) ~[camel-base-engine-3.20.7.jar:3.20.7]
+	at org.apache.camel.impl.engine.DefaultReactiveExecutor.scheduleMain(DefaultReactiveExecutor.java:59) ~[camel-base-engine-3.20.7.jar:3.20.7]
+	at org.apache.camel.processor.Pipeline.process(Pipeline.java:165) ~[camel-core-processor-3.20.7.jar:3.20.7]
+	at org.apache.camel.impl.engine.CamelInternalProcessor.process(CamelInternalProcessor.java:392) ~[camel-base-engine-3.20.7.jar:3.20.7]
+	at org.apache.camel.component.timer.TimerConsumer.sendTimerExchange(TimerConsumer.java:210) ~[camel-timer-3.20.7.jar:3.20.7]
+	at org.apache.camel.component.timer.TimerConsumer$1.run(TimerConsumer.java:76) ~[camel-timer-3.20.7.jar:3.20.7]
+	at java.util.TimerThread.mainLoop(Timer.java:563) ~[?:?]
+	at java.util.TimerThread.run(Timer.java:513) ~[?:?]
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.PlainSocketImpl.connect0(Native Method) ~[?:?]
+	at java.net.PlainSocketImpl.socketConnect(PlainSocketImpl.java:101) ~[?:?]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:412) ~[?:?]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:255) ~[?:?]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:237) ~[?:?]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[?:?]
+	at java.net.Socket.connect(Socket.java:609) ~[?:?]
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75) ~[httpclient-4.5.14.jar:4.5.14]
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142) ~[httpclient-4.5.14.jar:4.5.14]
+	... 24 more
+2026-01-29 13:40:15 INFO  [Camel (camel-1) thread #1 - timer://privateApiPoller] private-api-to-kafka-route - ? Triggering Private API call
+2026-01-29 13:40:18 ERROR [Camel (camel-1) thread #1 - timer://privateApiPoller] com.example.camel.routes.PrivateApiToKafkaRoute - ? Error occurred while calling Private API
+org.apache.http.conn.HttpHostConnectException: Connect to 172.24.31.54:8081 [/172.24.31.54] failed: Connection refused: connect
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156) ~[httpclient-4.5.14.jar:4.5.14]
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376) ~[httpclient-4.5.14.jar:4.5.14]
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393) ~[httpclient-4.5.14.jar:4.5.14]
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236) ~[httpclient-4.5.14.jar:4.5.14]
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186) ~[httpclient-4.5.14.jar:4.5.14]
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89) ~[httpclient-4.5.14.jar:4.5.14]
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185) ~[httpclient-4.5.14.jar:4.5.14]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:72) ~[httpclient-4.5.14.jar:4.5.14]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56) ~[httpclient-4.5.14.jar:4.5.14]
+	at org.apache.camel.component.http.HttpProducer.executeMethod(HttpProducer.java:445) ~[camel-http-3.20.7.jar:3.20.7]
+	at org.apache.camel.component.http.HttpProducer.process(HttpProducer.java:273) ~[camel-http-3.20.7.jar:3.20.7]
+	at org.apache.camel.support.AsyncProcessorConverterHelper$ProcessorToAsyncProcessorBridge.process(AsyncProcessorConverterHelper.java:66) ~[camel-support-3.20.7.jar:3.20.7]
+	at org.apache.camel.processor.SendDynamicProcessor.lambda$process$0(SendDynamicProcessor.java:197) ~[camel-core-processor-3.20.7.jar:3.20.7]
+	at org.apache.camel.support.cache.DefaultProducerCache.doInAsyncProducer(DefaultProducerCache.java:327) ~[camel-support-3.20.7.jar:3.20.7]
+	at org.apache.camel.processor.SendDynamicProcessor.process(SendDynamicProcessor.java:182) ~[camel-core-processor-3.20.7.jar:3.20.7]
+	at org.apache.camel.processor.errorhandler.RedeliveryErrorHandler$RedeliveryTask.doRun(RedeliveryErrorHandler.java:829) ~[camel-core-processor-3.20.7.jar:3.20.7]
+	at org.apache.camel.processor.errorhandler.RedeliveryErrorHandler$RedeliveryTask.run(RedeliveryErrorHandler.java:737) ~[camel-core-processor-3.20.7.jar:3.20.7]
+	at org.apache.camel.impl.engine.DefaultReactiveExecutor$Worker.schedule(DefaultReactiveExecutor.java:181) ~[camel-base-engine-3.20.7.jar:3.20.7]
+	at org.apache.camel.impl.engine.DefaultReactiveExecutor.scheduleMain(DefaultReactiveExecutor.java:59) ~[camel-base-engine-3.20.7.jar:3.20.7]
+	at org.apache.camel.processor.Pipeline.process(Pipeline.java:165) ~[camel-core-processor-3.20.7.jar:3.20.7]
+	at org.apache.camel.impl.engine.CamelInternalProcessor.process(CamelInternalProcessor.java:392) ~[camel-base-engine-3.20.7.jar:3.20.7]
+	at org.apache.camel.component.timer.TimerConsumer.sendTimerExchange(TimerConsumer.java:210) ~[camel-timer-3.20.7.jar:3.20.7]
+	at org.apache.camel.component.timer.TimerConsumer$1.run(TimerConsumer.java:76) ~[camel-timer-3.20.7.jar:3.20.7]
+	at java.util.TimerThread.mainLoop(Timer.java:563) ~[?:?]
+	at java.util.TimerThread.run(Timer.java:513) ~[?:?]
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.PlainSocketImpl.connect0(Native Method) ~[?:?]
+	at java.net.PlainSocketImpl.socketConnect(PlainSocketImpl.java:101) ~[?:?]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:412) ~[?:?]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:255) ~[?:?]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:237) ~[?:?]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[?:?]
+	at java.net.Socket.connect(Socket.java:609) ~[?:?]
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75) ~[httpclient-4.5.14.jar:4.5.14]
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142) ~[httpclient-4.5.14.jar:4.5.14]
+	... 24 more
+2026-01-29 13:40:20 INFO  [Camel (camel-1) thread #1 - timer://privateApiPoller] private-api-to-kafka-route - ? Triggering Private API call
+2026-01-29 13:40:22 ERROR [Camel (camel-1) thread #1 - timer://privateApiPoller] com.example.camel.routes.PrivateApiToKafkaRoute - ? Error occurred while calling Private API
+org.apache.http.conn.HttpHostConnectException: Connect to 172.24.31.54:8081 [/172.24.31.54] failed: Connection refused: connect
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156) ~[httpclient-4.5.14.jar:4.5.14]
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376) ~[httpclient-4.5.14.jar:4.5.14]
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393) ~[httpclient-4.5.14.jar:4.5.14]
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236) ~[httpclient-4.5.14.jar:4.5.14]
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186) ~[httpclient-4.5.14.jar:4.5.14]
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89) ~[httpclient-4.5.14.jar:4.5.14]
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185) ~[httpclient-4.5.14.jar:4.5.14]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:72) ~[httpclient-4.5.14.jar:4.5.14]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56) ~[httpclient-4.5.14.jar:4.5.14]
+	at org.apache.camel.component.http.HttpProducer.executeMethod(HttpProducer.java:445) ~[camel-http-3.20.7.jar:3.20.7]
+	at org.apache.camel.component.http.HttpProducer.process(HttpProducer.java:273) ~[camel-http-3.20.7.jar:3.20.7]
+	at org.apache.camel.support.AsyncProcessorConverterHelper$ProcessorToAsyncProcessorBridge.process(AsyncProcessorConverterHelper.java:66) ~[camel-support-3.20.7.jar:3.20.7]
+	at org.apache.camel.processor.SendDynamicProcessor.lambda$process$0(SendDynamicProcessor.java:197) ~[camel-core-processor-3.20.7.jar:3.20.7]
+	at org.apache.camel.support.cache.DefaultProducerCache.doInAsyncProducer(DefaultProducerCache.java:327) ~[camel-support-3.20.7.jar:3.20.7]
+	at org.apache.camel.processor.SendDynamicProcessor.process(SendDynamicProcessor.java:182) ~[camel-core-processor-3.20.7.jar:3.20.7]
+	at org.apache.camel.processor.errorhandler.RedeliveryErrorHandler$RedeliveryTask.doRun(RedeliveryErrorHandler.java:829) ~[camel-core-processor-3.20.7.jar:3.20.7]
+	at org.apache.camel.processor.errorhandler.RedeliveryErrorHandler$RedeliveryTask.run(RedeliveryErrorHandler.java:737) ~[camel-core-processor-3.20.7.jar:3.20.7]
+	at org.apache.camel.impl.engine.DefaultReactiveExecutor$Worker.schedule(DefaultReactiveExecutor.java:181) ~[camel-base-engine-3.20.7.jar:3.20.7]
+	at org.apache.camel.impl.engine.DefaultReactiveExecutor.scheduleMain(DefaultReactiveExecutor.java:59) ~[camel-base-engine-3.20.7.jar:3.20.7]
+	at org.apache.camel.processor.Pipeline.process(Pipeline.java:165) ~[camel-core-processor-3.20.7.jar:3.20.7]
+	at org.apache.camel.impl.engine.CamelInternalProcessor.process(CamelInternalProcessor.java:392) ~[camel-base-engine-3.20.7.jar:3.20.7]
+	at org.apache.camel.component.timer.TimerConsumer.sendTimerExchange(TimerConsumer.java:210) ~[camel-timer-3.20.7.jar:3.20.7]
+	at org.apache.camel.component.timer.TimerConsumer$1.run(TimerConsumer.java:76) ~[camel-timer-3.20.7.jar:3.20.7]
+	at java.util.TimerThread.mainLoop(Timer.java:563) ~[?:?]
+	at java.util.TimerThread.run(Timer.java:513) ~[?:?]
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.PlainSocketImpl.connect0(Native Method) ~[?:?]
+	at java.net.PlainSocketImpl.socketConnect(PlainSocketImpl.java:101) ~[?:?]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:412) ~[?:?]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:255) ~[?:?]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:237) ~[?:?]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[?:?]
+	at java.net.Socket.connect(Socket.java:609) ~[?:?]
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75) ~[httpclient-4.5.14.jar:4.5.14]
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142) ~[httpclient-4.5.14.jar:4.5.14]
+	... 24 more
+2026-01-29 13:40:25 INFO  [SpringApplicationShutdownHook] org.apache.camel.impl.engine.AbstractCamelContext - Apache Camel 3.20.7 (camel-1) is shutting down (timeout:45s)
+2026-01-29 13:40:25 INFO  [SpringApplicationShutdownHook] org.apache.camel.impl.engine.AbstractCamelContext - Routes stopped (stopped:1)
+2026-01-29 13:40:25 INFO  [SpringApplicationShutdownHook] org.apache.camel.impl.engine.AbstractCamelContext -     Stopped private-api-to-kafka-route (timer://privateApiPoller)
+2026-01-29 13:40:25 INFO  [SpringApplicationShutdownHook] org.apache.camel.impl.engine.AbstractCamelContext - Apache Camel 3.20.7 (camel-1) shutdown in 96ms (uptime:26s)
+2026-01-29 14:08:21 INFO  [main] com.example.camel.CamelKafkaApplication - Starting CamelKafkaApplication using Java 11.0.29 on VDIDEV-018 with PID 20872 (C:\Users\ARagunathan\Documents\camel-privateapi-kafka\target\classes started by ARagunathan in C:\Users\ARagunathan\Documents\camel-privateapi-kafka)
+2026-01-29 14:08:21 INFO  [main] com.example.camel.CamelKafkaApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-29 14:08:26 INFO  [main] org.apache.camel.impl.engine.AbstractCamelContext - Apache Camel 3.20.7 (camel-1) is starting
+2026-01-29 14:08:26 INFO  [main] org.apache.camel.spring.boot.CamelSpringBootApplicationListener - Starting CamelMainRunController to ensure the main thread keeps running
+2026-01-29 14:08:26 INFO  [CamelMainRunController] org.apache.camel.main.MainSupport - Apache Camel (Main) 3.20.7 is starting
+2026-01-29 14:08:26 INFO  [main] org.apache.camel.impl.engine.AbstractCamelContext - Routes startup (started:1)
+2026-01-29 14:08:26 INFO  [main] org.apache.camel.impl.engine.AbstractCamelContext -     Started private-api-to-kafka-route (timer://privateApiPoller)
+2026-01-29 14:08:26 INFO  [main] org.apache.camel.impl.engine.AbstractCamelContext - Apache Camel 3.20.7 (camel-1) started in 949ms (build:168ms init:611ms start:170ms)
+2026-01-29 14:08:26 INFO  [main] com.example.camel.CamelKafkaApplication - Started CamelKafkaApplication in 6.672 seconds (JVM running for 9.409)
+2026-01-29 14:08:29 INFO  [Camel (camel-1) thread #1 - timer://privateApiPoller] com.example.camel.routes.PrivateApiToKafkaRoute - MESSAGE_SENT_TO_KAFKA => {"status":"Good","message":"Private API is running"}
+2026-01-29 14:08:29 INFO  [Camel (camel-1) thread #1 - timer://privateApiPoller] org.apache.kafka.clients.producer.ProducerConfig - ProducerConfig values: 
+	acks = -1
+	batch.size = 16384
+	bootstrap.servers = [172.24.31.6:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2026-01-29 14:08:30 INFO  [Camel (camel-1) thread #1 - timer://privateApiPoller] org.apache.kafka.clients.producer.KafkaProducer - [Producer clientId=producer-1] Instantiated an idempotent producer.
+2026-01-29 14:08:30 INFO  [Camel (camel-1) thread #1 - timer://privateApiPoller] org.apache.kafka.common.utils.AppInfoParser - Kafka version: 3.1.2
+2026-01-29 14:08:30 INFO  [Camel (camel-1) thread #1 - timer://privateApiPoller] org.apache.kafka.common.utils.AppInfoParser - Kafka commitId: f8c67dc3ae0a3265
+2026-01-29 14:08:30 INFO  [Camel (camel-1) thread #1 - timer://privateApiPoller] org.apache.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1769724510223
+2026-01-29 14:08:31 INFO  [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.Metadata - [Producer clientId=producer-1] Resetting the last seen epoch of partition bamoedata-topic-0 to 0 since the associated topicId changed from null to KhAM6CokS3CTcmhoOOi8Mw
+2026-01-29 14:08:31 INFO  [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.Metadata - [Producer clientId=producer-1] Cluster ID: zqacU31kT3Ovv9hzKvW39A
+2026-01-29 14:08:31 INFO  [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.producer.internals.TransactionManager - [Producer clientId=producer-1] ProducerId set to 1000 with epoch 0
+2026-01-29 14:08:32 INFO  [Camel (camel-1) thread #1 - timer://privateApiPoller] com.example.camel.routes.PrivateApiToKafkaRoute - MESSAGE_SENT_TO_KAFKA => {"status":"Good","message":"Private API is running"}
+2026-01-29 14:08:37 INFO  [Camel (camel-1) thread #1 - timer://privateApiPoller] com.example.camel.routes.PrivateApiToKafkaRoute - MESSAGE_SENT_TO_KAFKA => {"status":"Good","message":"Private API is running"}
+2026-01-29 14:08:42 INFO  [Camel (camel-1) thread #1 - timer://privateApiPoller] com.example.camel.routes.PrivateApiToKafkaRoute - MESSAGE_SENT_TO_KAFKA => {"status":"Good","message":"Private API is running"}
+2026-01-29 14:08:47 INFO  [Camel (camel-1) thread #1 - timer://privateApiPoller] com.example.camel.routes.PrivateApiToKafkaRoute - MESSAGE_SENT_TO_KAFKA => {"status":"Good","message":"Private API is running"}
+2026-01-29 14:08:52 INFO  [Camel (camel-1) thread #1 - timer://privateApiPoller] com.example.camel.routes.PrivateApiToKafkaRoute - MESSAGE_SENT_TO_KAFKA => {"status":"Good","message":"Private API is running"}
+2026-01-29 14:08:57 INFO  [Camel (camel-1) thread #1 - timer://privateApiPoller] com.example.camel.routes.PrivateApiToKafkaRoute - MESSAGE_SENT_TO_KAFKA => {"status":"Good","message":"Private API is running"}
+2026-01-29 14:09:02 INFO  [Camel (camel-1) thread #1 - timer://privateApiPoller] com.example.camel.routes.PrivateApiToKafkaRoute - MESSAGE_SENT_TO_KAFKA => {"status":"Good","message":"Private API is running"}
+2026-01-29 14:09:07 INFO  [Camel (camel-1) thread #1 - timer://privateApiPoller] com.example.camel.routes.PrivateApiToKafkaRoute - MESSAGE_SENT_TO_KAFKA => {"status":"Good","message":"Private API is running"}
+2026-01-29 14:09:12 INFO  [Camel (camel-1) thread #1 - timer://privateApiPoller] com.example.camel.routes.PrivateApiToKafkaRoute - MESSAGE_SENT_TO_KAFKA => {"status":"Good","message":"Private API is running"}
+2026-01-29 14:09:15 INFO  [SpringApplicationShutdownHook] org.apache.camel.impl.engine.AbstractCamelContext - Apache Camel 3.20.7 (camel-1) is shutting down (timeout:45s)
+2026-01-29 14:09:15 INFO  [Camel (camel-1) thread #12 - ShutdownTask] org.apache.kafka.clients.producer.KafkaProducer - [Producer clientId=producer-1] Closing the Kafka producer with timeoutMillis = 9223372036854775807 ms.
+2026-01-29 14:09:15 INFO  [Camel (camel-1) thread #12 - ShutdownTask] org.apache.kafka.common.metrics.Metrics - Metrics scheduler closed
+2026-01-29 14:09:15 INFO  [Camel (camel-1) thread #12 - ShutdownTask] org.apache.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2026-01-29 14:09:15 INFO  [Camel (camel-1) thread #12 - ShutdownTask] org.apache.kafka.common.metrics.Metrics - Metrics reporters closed
+2026-01-29 14:09:15 INFO  [Camel (camel-1) thread #12 - ShutdownTask] org.apache.kafka.common.utils.AppInfoParser - App info kafka.producer for producer-1 unregistered
+2026-01-29 14:09:15 INFO  [SpringApplicationShutdownHook] org.apache.camel.impl.engine.AbstractCamelContext - Routes stopped (stopped:1)
+2026-01-29 14:09:15 INFO  [SpringApplicationShutdownHook] org.apache.camel.impl.engine.AbstractCamelContext -     Stopped private-api-to-kafka-route (timer://privateApiPoller)
+2026-01-29 14:09:15 INFO  [SpringApplicationShutdownHook] org.apache.camel.impl.engine.AbstractCamelContext - Apache Camel 3.20.7 (camel-1) shutdown in 236ms (uptime:49s)

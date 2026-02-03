@@ -1,0 +1,4 @@
+com\example\privateapi\service\HealthService.class
+com\example\privateapi\model\HealthResponse.class
+com\example\privateapi\PrivateApiApplication.class
+com\example\privateapi\controller\HealthController.class
