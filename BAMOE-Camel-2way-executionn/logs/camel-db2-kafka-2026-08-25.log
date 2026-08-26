@@ -1,0 +1,17 @@
+2026-08-25 12:49:11.612 | INFO | [APP STARTUP] Bouncy Castle provider inserted
+2026-08-25 12:49:16.574 | INFO | [BAMOE-CAMEL-DB2-CONNECTOR-CONFIG] caseDb2DataSource bean registered successfully
+2026-08-25 12:49:16.648 | INFO | [BAMOE-CAMEL-DB2-CONNECTOR] CamelDb2Connector initialized | DataSource=caseDb2DataSource
+2026-08-25 12:49:20.462 | INFO | [BAMOE-CONNECTION-TESTER] [DB2] Connection opened successfully
+2026-08-25 12:49:20.748 | ERROR | [BAMOE-CONNECTION-TESTER] [KAFKA] - KAFKA BROKER CONNECTION FAILED | Broker=host.containers.internal:9092 | Reason=Failed to create new KafkaAdminClient | Check: broker IP and port in application.properties
+2026-08-25 12:49:20.752 | INFO | [APP READY] Application started - BAMOE Camel route active
+2026-08-25 12:49:20.753 | INFO | [APP READY] Listening for BAMOE requests on: POST http://vmdevtestrhelaro01.dcss.gov:8080/bamoe/execute-query
+2026-08-25 12:52:25.739 | INFO | [BAMOE-CAMEL-DB2] STEP 1 - Parsed successfully | queryId=caseLookup | caseId=0370017718398
+2026-08-25 12:52:26.281 | ERROR | [BAMOE-CAMEL-DB2] Failed to publish to Kafka | Topic=bamoe-event-publish | Reason=Failed to create Producer for endpoint: kafka://bamoe-event-publish?brokers=host.containers.internal%3A9092&deliveryTimeoutMs=5000&maxBlockMs=3000&requestTimeoutMs=3000&retries=3. Reason: org.apache.kafka.common.KafkaException: Failed to construct kafka producer
+2026-08-25 12:52:27.250 | INFO | [BAMOE-CAMEL-DB2-CONNECTOR] DB2 query successful | caseId=0370017718398 | RowsReturned=8 | DurationMs=963 | Columns=[PRTCP_ID, CASE_ID, CASE_EXTID, FIRST_NM, LAST_NM, ROLE_CD]
+2026-08-25 12:52:27.266 | ERROR | [BAMOE-CAMEL-DB2] Failed to publish to Kafka | Topic=bamoe-event-publish | Reason=Failed to create Producer for endpoint: kafka://bamoe-event-publish?brokers=host.containers.internal%3A9092&deliveryTimeoutMs=5000&maxBlockMs=3000&requestTimeoutMs=3000&retries=3. Reason: org.apache.kafka.common.KafkaException: Failed to construct kafka producer
+2026-08-25 12:52:27.270 | INFO | [BAMOE-CAMEL-DB2] ROUTE COMPLETE | queryId=caseLookup | caseId=0370017718398 | DurationMs=1539
+2026-08-25 13:24:48.382 | INFO | [BAMOE-CAMEL-DB2] STEP 1 - Parsed successfully | queryId=caseLookup | caseId=0370017718398
+2026-08-25 13:24:48.430 | ERROR | [BAMOE-CAMEL-DB2] Failed to publish to Kafka | Topic=bamoe-event-publish | Reason=Failed to create Producer for endpoint: kafka://bamoe-event-publish?brokers=host.containers.internal%3A9092&deliveryTimeoutMs=5000&maxBlockMs=3000&requestTimeoutMs=3000&retries=3. Reason: org.apache.kafka.common.KafkaException: Failed to construct kafka producer
+2026-08-25 13:24:49.444 | INFO | [BAMOE-CAMEL-DB2-CONNECTOR] DB2 query successful | caseId=0370017718398 | RowsReturned=8 | DurationMs=1011 | Columns=[PRTCP_ID, CASE_ID, CASE_EXTID, FIRST_NM, LAST_NM, ROLE_CD]
+2026-08-25 13:24:49.456 | ERROR | [BAMOE-CAMEL-DB2] Failed to publish to Kafka | Topic=bamoe-event-publish | Reason=Failed to create Producer for endpoint: kafka://bamoe-event-publish?brokers=host.containers.internal%3A9092&deliveryTimeoutMs=5000&maxBlockMs=3000&requestTimeoutMs=3000&retries=3. Reason: org.apache.kafka.common.KafkaException: Failed to construct kafka producer
+2026-08-25 13:24:49.457 | INFO | [BAMOE-CAMEL-DB2] ROUTE COMPLETE | queryId=caseLookup | caseId=0370017718398 | DurationMs=1067
